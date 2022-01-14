@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+    <h2>Enter Your Flight Information</h2>
+    <div class="form-wrapper">
+        <form action="/flights" method="POST">
+            <label>Airline:
+                <input type="text" name="airline" placeholder="American-Southwest-United">
+            </label><br>
+            <label>Airport:
+                <select name="airport">
+                    <option value="AUS">AUS</option>
+                    <option value="DFW">DFW</option>
+                    <option value="DEN">DEN</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SAN">SAN</option>
+                </select>
+            </label><br>
+            <label>Flight Number
+                <input type="number" name="flightNo" placeholder=10>
+            </label><br>
+            <label>Departs:
+                <input type="date" name="departs">
+            </label><br>
+            <input type="submit" value="Add flight">
+        </form>
+    </div>
+    <%- include('../partials/footer') %>
