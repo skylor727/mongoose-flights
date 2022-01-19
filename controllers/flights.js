@@ -3,6 +3,7 @@ module.exports = {
   new: newFlight,
   index,
   create,
+  show,
 };
 
 function newFlight(req, res) {
@@ -12,6 +13,12 @@ function newFlight(req, res) {
 function index(req, res) {
   Flight.find({}, function (err, flights) {
     res.render("flights/index", { flights });
+  });
+}
+
+function show(req, res) {
+  Flight.findById(req.params.id, (err, flight) => {
+    res.render("flights/show", { title: "Flight info", flight });
   });
 }
 
