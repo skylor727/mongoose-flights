@@ -4,6 +4,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+ 
 }
 h1,
 nav {
@@ -20,4 +21,38 @@ td {
   text-align: center;
   width: 35vmin;
 }
+.flight-info {
+  display: flex;
+  background-color: orange;
+  width: 100%;
+}
+.arrival-info {
+  background-color: green;
+  width: 100%;
+  display: flex;
+  
+}
+.destinations {
+  background-color: pink;
+  width:100%;
+  display: flex;
+}
 
+.form-wrapper {
+  display:flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-info{
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+}
+
+.ticket-info > a {
+  display:flex;
+  align-self: flex-end;
+  position:absolute;
+
+}
