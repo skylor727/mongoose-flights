@@ -31,31 +31,35 @@
     <section class="arrival-info">
 
         <h2>Arrival Information:</h2>
-        <% if (flight.destinations.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Airport</th>
-                        <th>Arrival Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% flight.destinations.forEach(function(f) { %>
+        <div class="arrival-wrapper">
+            <% if (flight.destinations.length) { %>
+                <table>
+                    <thead>
                         <tr>
-                            <td>
-                                <%= f.airport %>
-                            </td>
-                            <td>
-                                <%= f.arrival %>
-                            </td>
-
+                            <th>Airport</th>
+                            <th>Arrival Time</th>
                         </tr>
-                        <% }); %>
-                </tbody>
-            </table>
-            <% } else { %>
-                <h5>No Arrival Information Yet</h5>
-                <% } %>
+                    </thead>
+                    <tbody>
+                        <% flight.destinations.forEach(function(f) { %>
+                            <tr>
+                                <td>
+                                    <%= f.airport %>
+                                </td>
+                                <td>
+                                    <%= f.arrival %>
+                                </td>
+
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <div class="h4-wrapper">
+                        <h4>No Arrival Information Yet</h4>
+                    </div>
+                    <% } %>
+        </div>
     </section>
     <!-- new markup below -->
     <section class="destinations">
@@ -81,30 +85,34 @@
     <section class="ticket-info">
         <h2>Tickets:</h2>
         <% if (Object.values(tickets).length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Price</th>
-                        <th>Seat</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% tickets.forEach(function(t) { %>
+            <div class="ticket-wrapper">
+                <table>
+                    <thead>
                         <tr>
-                            <td>
-                                <%= t.price %>
-                            </td>
-                            <td>
-                                <%= t.seat %>
-                            </td>
-
+                            <th>Price</th>
+                            <th>Seat</th>
                         </tr>
-                        <% }); %>
-                </tbody>
-            </table>
-            <% } else { %>
-                <h5>No Ticket Information Yet</h5>
-                <% } %>
-                    <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+                    </thead>
+                    <tbody>
+                        <% tickets.forEach(function(t) { %>
+                            <tr>
+                                <td>
+                                    $<%= t.price %>
+                                </td>
+                                <td>
+                                    <%= t.seat %>
+                                </td>
+
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <div class="h4-wrapper">
+                        <h4>No Ticket Information Yet</h4>
+                    </div>
+                    <% } %>
+            </div>
+            <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
     </section>
     <%- include('../partials/footer') %>
